@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contactsSlice';
+import { deleteContact } from '../../redux/operations';
 
 import {
   ContactListStyled,
@@ -27,10 +27,10 @@ export const ContactList = () => {
  
   return (
     <ContactListStyled>
-      {getContacts.map(({ id, name, number }) => (
+      {getContacts.map(({ id, name, phone }) => (
         <ContactItemStyled key={id}>
           <p>
-            {name}: {number}
+            {name}: {phone}
           </p>
           <ButtonStyled
             type="button"

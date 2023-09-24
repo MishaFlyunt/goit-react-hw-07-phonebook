@@ -2,7 +2,7 @@ import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import { Formik } from 'formik';
 import toast from 'react-hot-toast';
-import { addContact } from '../../redux/contactsSlice';
+import { addContact } from '../../redux/operations';
 import {
   FormStyled,
   LabelStylet,
