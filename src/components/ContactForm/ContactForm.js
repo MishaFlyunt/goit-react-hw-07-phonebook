@@ -43,7 +43,6 @@ export const ContactForm = () => {
       return toast.error('A contact with that name or number already exists');
     }
     dispatch(addContact({ ...values }));
-    // dispatch(addContact({ ...values, id: nanoid() }));
     actions.resetForm();
   };
 

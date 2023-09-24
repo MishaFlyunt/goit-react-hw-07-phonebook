@@ -19,6 +19,7 @@ export const ContactList = () => {
   //     contact.name.toLowerCase().trim().includes(lowerCaseFilter)
   //   );
   // };
+  
  console.log(contacts);
   const getContacts = contacts.filter(({ name }) =>
     name.toLowerCase().trim().includes(filter.toLowerCase())
