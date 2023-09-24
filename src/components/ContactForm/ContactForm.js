@@ -1,4 +1,4 @@
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import { Formik } from 'formik';
 import toast from 'react-hot-toast';
@@ -30,18 +30,21 @@ const schema = Yup.object().shape({
 export const ContactForm = () => {
   const contacts = useSelector(state => state.contacts.items);
   const dispatch = useDispatch();
-
+  console.log(contacts);
   const handleSubmit = (values, actions) => {
-    if(contacts.some(
-      contact =>
-        contact.name.toLowerCase().trim() ===
-          values.name.toLowerCase().trim() ||
-        contact.number.trim() === values.number.trim()
-    )) {
+    if (
+      contacts.find(
+        contact =>
+          contact.name.toLowerCase().trim() ===
+            values.name.toLowerCase().trim() ||
+          contact.number.trim() === values.number.trim()
+      )
+    ) {
       return toast.error('A contact with that name or number already exists');
     }
-     dispatch(addContact({ ...values, id: nanoid() }));
-     actions.resetForm();
+    dispatch(addContact({ ...values }));
+    // dispatch(addContact({ ...values, id: nanoid() }));
+    actions.resetForm();
   };
 
   return (

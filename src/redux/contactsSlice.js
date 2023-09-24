@@ -19,7 +19,6 @@ const contactsSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       state.items = action.payload;
-      // state.items.push(action.payload);
       console.log(state.items);
     },
     [fetchContact.rejected]: handleRejected,

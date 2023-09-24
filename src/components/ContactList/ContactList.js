@@ -27,10 +27,10 @@ export const ContactList = () => {
  
   return (
     <ContactListStyled>
-      {getContacts.map(({ id, name, phone }) => (
+      {getContacts.map(({ id, name, number }) => (
         <ContactItemStyled key={id}>
           <p>
-            {name}: {phone}
+            {name}: {number}
           </p>
           <ButtonStyled
             type="button"
